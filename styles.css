@@ -14,8 +14,31 @@ body{
   border-radius: 15px;
   box-shadow: 1px 2px 4px 0px rgb(230, 230, 230), 0px -1px 4px 0px rgb(240,240,240);
 }
+.controls{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top : 20px;
+}
+.controls .controlsBtns{
+  margin-bottom: 40px;
+}
+.controlsBtns button{
+  background-color: white;
+  color : rgb(145, 145, 145);
+  border : 2px solid rgb(206, 206, 206);
+  border-radius: 8px;
+  margin : 0px 5px;
+  width : 100px;
+  height :30px;
+  font-size : 18px;
+  box-shadow: 1px 2px 4px 0px rgb(230, 230, 230), 0px -1px 4px 0px rgb(240,240,240);
+}
+
+.controlsBtns button:active{
+  transform: scale(0.95);
+}
 .controls .controlsColors{
-  margin-top: 30px;
   display :flex;
 }
 .controlsColors .controlsColors{
