@@ -4,6 +4,7 @@ const colors = document.querySelectorAll(".jsColors");
 const range = document.querySelector("#jsRange");
 const mode = document.querySelector("#jsMode");
 const clear = document.querySelector("#jsClear");
+const save = document.querySelector('#jsSave');
 
 let painting = false;
 function startPainting(){painting = true;}
@@ -66,6 +67,13 @@ function handleMode(){
     paintMode();
   }
 }
+function saveImage(){
+  const downloadLink= document.createElement('a');
+  const image = canvas.toDataURL();
+  downloadLink.href = image;
+  downloadLink.download = "MyImage";
+  downloadLink.click();
+}
 
 function init(){
 
@@ -84,6 +92,8 @@ function init(){
   mode.addEventListener('click',handleMode);
   Array.from(colors).forEach(function(){addEventListener('click',changeColor)});
   canvas.addEventListener('click',fillColor);
+  save.addEventListener('click',saveImage);
+  document.querySelector('body').addEventListener('contextmenu',function(e){e.preventDefault()})
 }
 
 init();
